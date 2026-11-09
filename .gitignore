@@ -1,0 +1,38 @@
+# Files that never leave your machine.
+# Anything listed here gets skipped when your AI saves your work to GitHub.
+
+# Your API keys live here, whatever the file ends up named. Never remove these lines.
+.env
+.env.*
+env
+env.*
+*.key
+keys.md
+keys.txt
+keys.json
+secrets.*
+credentials.*
+
+# Computer junk
+.DS_Store
+.playwright-cli/
+# Any file ending in .env, whatever it gets named. Keys never leave your machine
+*.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Your website's numbers from tools/pull_web.py stay on your computer
+command-center/data/web.json
+command-center/data/web.js
+
+# Your revenue from the Payments Agent stays on your computer too
+command-center/data/payments.json
+command-center/data/payments.js
+
+# Obsidian: share settings, not window layout
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/snippets/

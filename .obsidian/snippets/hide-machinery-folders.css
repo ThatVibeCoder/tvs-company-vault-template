@@ -1,0 +1,2 @@
+/* Hide machinery folders from the sidebar (they stay on disk). */
+.nav-folder:has(> .nav-folder-title[data-path="tools"]) { display: none; }
