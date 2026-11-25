@@ -25,14 +25,14 @@ Every routine's `README.md` starts with this header:
 name: Traffic Report
 team: Dev Team
 status: planned
-runs_on: github-actions
+runs_on: github-action
 schedule: every Monday at 8:00 AM
 purpose: "One sentence on what it does."
 ---
 ```
 
 - `status:` is `planned` (described, not running yet) or `live` (running).
-- `runs_on:` is `github-actions` (in your headquarters repo) or `your-computer` (a scheduled task on your computer).
+- `runs_on:` is `github-action` (in your headquarters repo) or `this-computer` (a scheduled task on your computer).
 - `schedule:` says when, in plain words. Leave it empty if it only runs when you start it.
 - Wrap `purpose:` in double quotes if it has a `:` in it.
 

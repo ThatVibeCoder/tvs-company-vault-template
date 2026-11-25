@@ -485,7 +485,7 @@ def sync_agent_files(check):
 # The code for a routine lives in the headquarters repo (a GitHub Action) or as a scheduled task on the owner's
 # computer. Here sync only checks each description page's header, so every AI can trust it.
 ROUTINE_STATUS = ("planned", "live")
-ROUTINE_RUNS_ON = ("github-actions", "your-computer")
+ROUTINE_RUNS_ON = ("github-action", "this-computer")
 
 
 def validate_routines():
@@ -512,7 +512,7 @@ def validate_routines():
         if meta.get("status") and meta["status"] not in ROUTINE_STATUS:
             errors.append(f"{rel(p)}: `status:` must be `planned` or `live`")
         if meta.get("runs_on") and meta["runs_on"] not in ROUTINE_RUNS_ON:
-            errors.append(f"{rel(p)}: `runs_on:` must be `github-actions` (your headquarters repo) or `your-computer` "
+            errors.append(f"{rel(p)}: `runs_on:` must be `github-action` (your headquarters repo) or `this-computer` "
                           f"(a scheduled task on your computer)")
     return n
 

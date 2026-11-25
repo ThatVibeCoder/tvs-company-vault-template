@@ -2,7 +2,7 @@
 name: Traffic Report
 team: Dev Team
 status: planned
-runs_on: github-actions
+runs_on: github-action
 schedule: every Monday at 13:00 UTC
 purpose: "Reads Google Search Console and Bing for your site every Monday and writes a short report on last week, in plain words."
 ---
@@ -11,7 +11,7 @@ purpose: "Reads Google Search Console and Bing for your site every Monday and wr
 This is an **example** description page. It describes `traffic-report`, the example job that ships in the headquarters template (weekly, Monday morning). Change `status:` to `live` once it runs in your own headquarters repo.
 
 ## What it does
-Every Monday it reads how many people found your site on Google and Bing last week (clicks, how often you showed up, your average spot, your top searches and top pages) and writes a short report. It only reads. It never changes anything on Google, Bing or your site.
+Every Monday it reads how many people found your site on Google and Bing last week (clicks, how often you showed up, your average spot, your top searches and top pages) and writes a short report in three parts: what moved, what didn't, and one thing worth trying. It only reads. It never changes anything on Google, Bing or your site.
 
 ## Where it runs
 A GitHub Action in your headquarters repo, so it runs even when your computer is off:
@@ -29,7 +29,7 @@ Every Monday at 13:00 UTC (early morning in the US). You can also start it any t
 Never write a key on this page. Only the name, and where it's kept.
 
 ## Where the report goes
-On the run's page on GitHub (the Actions tab). It is never saved into this vault: a pile of weekly reports would be a log. When you want last week's numbers, open the latest run, or ask your AI to read Search Console directly.
+On the run's page on GitHub (the Actions tab), plus a download of the same report that GitHub keeps for 30 days. It is never saved into this vault: a pile of weekly reports would be a log. When you want last week's numbers, open the latest run, or ask your AI to read Search Console directly.
 
 ## The how-to
 Setting it up, running it, and what to do when it fails: `automations/traffic-report/README.md` in your headquarters repo (template: github.com/ThatVibeCoder/tvs-marketing-headquarters). Your course lesson walks you through it.
