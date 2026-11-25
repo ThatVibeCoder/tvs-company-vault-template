@@ -17,16 +17,16 @@ Every piece of information has exactly one home. Find it in this table and add t
 | Your content mix and where you post | `brand/channels.md` | Company Strategist |
 | Your content topics, and the 4 questions every post answers | `knowledge/topics.md` | Social Manager |
 | Every post waiting to go out: one file each, with its platform, status, day and time | your headquarters repo's `posts/` folder (the queue a posting job reads; a post leaves once it's sent). Never in this vault; a sent post lives on the platform | Copywriter writes it, Social Manager dates it; the owner approves it |
-| Your website's numbers from Google Analytics and Search Console | never saved here: read them in Google Analytics and Search Console when you need them; the weekly traffic report runs in your headquarters repo (`routines/weekly-traffic-report/README.md`) | Traffic Agent |
+| Your website's numbers from Google Analytics and Search Console | never saved here: read them in Google Analytics and Search Console when you need them; the weekly traffic report runs in your headquarters repo (`routines/traffic-report/README.md`) | Traffic Agent |
 | Your payments: revenue, invoices | never saved here: they live with your payment provider, read in the moment with a read-only key in `.env` | Payments Agent (Dev Team) |
-| Your openers: the ones that won, and the ones to try next | `knowledge/hooks.md` | Copywriter (read-the-stats marks the winners) |
+| Your openers: the ones that won, and the ones to try next | `marketing/social/hooks/<platform>.md` (the one home for hooks) | Copywriter (read-the-stats marks the winners) |
 | Banned words, formatting, never-do calls | `brand/guidelines.md` | whoever was corrected |
 | Colors, fonts, logos | `brand/colors.md`, `brand/typography.md`, `brand/assets/` | Designer |
 | Your business audit: tools, hours, what to cut and hand off | `knowledge/business-audit.md` | Company Strategist |
 | Your goals: the wins, numbers and things you want running next, crossed off as they land | `knowledge/goals.md` | Company Strategist |
 | Competitors (one file each: website, where they post and how often, what they lead with), swipes, outliers | `knowledge/competitors/<name>.md`, `knowledge/swipes/`, `knowledge/outliers.md` | Researcher (scan-my-competitors for the first look, competitor-check for the deeper read, collect-swipes for swipes, find-outliers for outliers) |
-| Reports (site audits, checkups, content stats) | `knowledge/reports/`, one file per kind, replaced each time (still to be moved: `knowledge/reports/README.md`) | the workflow that made it |
-| Your ads: the ready check and the weekly read | `knowledge/reports/ads-ready.md`, `knowledge/reports/ads.md` (each replaced by the next one) | Growth Lead |
+| Reports (site audits, checkups, traffic, content stats): a few of each, not a running record | `knowledge/reports/` (the one folder of dated files; see its README) | the workflow that made it |
+| Your ads: the ready check and the weekly read | `knowledge/reports/ads-ready-<YYYY-MM-DD>.md`, `knowledge/reports/ads-<YYYY-MM-DD>.md` | Growth Lead |
 | Your ad tests: the plan, the campaign (built paused, you turn it on), the tracking setup, each ad batch | `output/` next to the Growth Lead (`test-plan-<date>.md`), the Ads Manager (`campaign-<date>.md`, `tracking.md`) and the Ad Writer (`batch-<date>.md`) | the Ads Team |
 | The strategist's brief for the next team member | `departments/operations/strategy-team/company-strategist/briefs/<YYYY-MM-DD>-<team-member>.md` | Company Strategist |
 | Moat scores | `departments/operations/strategy-team/moat-analyst/scores.md` | Moat Analyst |
@@ -34,7 +34,7 @@ Every piece of information has exactly one home. Find it in this table and add t
 | Every landing page and the pages under it (forms, thank-you pages, upsells, product pages, on any domain), grouped by the offer each one sells | `knowledge/landing-pages.json` (a pointer list; its shape is in `knowledge/README.md`) | Page Builder (build-a-page registers each page); the Vercel Agent marks it live |
 | Raw recordings: your phone takes and voice memos before they're edited | never in this vault: they stay where you keep them (your phone, a drive folder); `brand/voice.md` points at where they live | Social Manager |
 | Finished work (drafts, pages, documents) | `output/` next to the team member that made it | that team member |
-| Your leads: one file per person, with where they came from and where things stand | `departments/sales/sales-team/crm-agent/leads/<lead-name>.md` (still to be moved: a file that grows with every touch is a log, so keep each one short and current; see `architecture/Vault Architecture.md`) | CRM Agent |
+| Your leads: one file per person, with where they came from and where things stand | `departments/sales/sales-team/crm-agent/leads/<lead-name>.md` (not settled: a file that grows with every touch is a log, so keep each one short and current; see `architecture/Vault Architecture.md`) | CRM Agent |
 | Booking messages | `output/` next to the Calendar Agent (`<date>-book-<lead>.md`) | Calendar Agent |
 | Reply drafts and follow-up nudges | `output/` next to the Reply Agent (`<date>-<lead>.md`) and the Nurture Agent (`<date>-<lead>.md`, `<date>-quiet-list.md`) | Reply Agent, Nurture Agent |
 | Work that runs on its own: one description page each (the code lives in your headquarters repo or as a scheduled task on your computer) | `routines/<name>/README.md` (the header is in `routines/README.md`) | the team that owns it |

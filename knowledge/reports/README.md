@@ -1,18 +1,19 @@
 # Reports
 
-**Still to be moved** (see `architecture/Vault Architecture.md`). A new report file every week is a log, so this folder is on its way out. Until the lessons that write here change, keep it small:
+A report is one finished read-out a team workflow makes: a site audit, a marketing checkup, a content stats read, an ads check. It says what was found and what to do next.
 
-- **One file per kind of report, replaced each time.** A new site audit replaces the old site audit. Don't keep a pile of dated copies: git keeps the old versions if you ever need one (`git log -- knowledge/reports/<file>`).
-- **The numbers live in your tools.** Visitors and searches: Google Analytics and Search Console. Ads: your ad account. Read them there when you need them.
-- **The weekly traffic report** runs in your headquarters repo as a GitHub Action, and its report stays on the run's page on GitHub. It is never saved here (`routines/weekly-traffic-report/README.md`).
+**This is the one folder in the vault where the course keeps dated files** (named so they sort by date). Your lessons read the newest report here by name, so keep the folder where it is and keep the names as the lessons write them.
 
-**What never goes here:** a report for one client (`clients/<client>/`), raw exports or data dumps, keys.
+**A few reports, not a running record.** Keep the latest few of each kind; when a kind piles up, delete the oldest ones (git keeps every old version: `git log -- knowledge/reports/`). The numbers behind a report live in your tools (Google Analytics, Search Console, your ad account): read them there when you need them.
+
+**What never goes here:** a report for one client (`clients/<client>/`), raw exports or data dumps, keys. The weekly traffic report from your headquarters repo stays on its GitHub run page and is never saved here (`routines/traffic-report/README.md`).
 
 The reports your lessons make, once their teams are built:
-- `site-audit.md` from the Website Team's "audit my site"
-- `marketing-checkup.md` from the Research Team's "run my marketing checkup"
-- `content-stats.md` from the Social Manager's read-the-stats (the opener and topic scoreboard)
-- `ads-ready.md` from the Growth Lead's ads-ready-check
-- `ads.md` from the Growth Lead's weekly-ads-read
+- `site-audit-<YYYY-MM>.md` from the Website Team's "audit my site"
+- `marketing-checkup-<YYYY-MM>.md` from the Research Team's "run my marketing checkup"
+- `traffic-<YYYY-MM-DD>.md` from the Traffic Agent's weekly-traffic-read
+- `content-stats-<YYYY-MM-DD>.md` from the Social Manager's read-the-stats (the weekly content read, with the opener and topic scoreboard)
+- `ads-ready-<YYYY-MM-DD>.md` from the Growth Lead's ads-ready-check
+- `ads-<YYYY-MM-DD>.md` from the Growth Lead's weekly-ads-read
 
-If a lesson's skill names a dated file (like `ads-2026-11-25.md`), save it under the plain name above instead, replacing the old one.
+Once the Content Team lesson builds the Designer, its make-a-report-doc turns any of these into a shareable document saved next to it.

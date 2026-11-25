@@ -37,7 +37,7 @@ Later in the course your website gets a third repo of its own (`<company>-websit
 | The rules every AI follows | `AGENTS.md` |
 | What runs on its own: one description page each | `routines/` (the code is in your headquarters repo) |
 | Clients you do work for: setup facts and the one allowed log | `clients/` |
-| What's been learned: topics, hooks, swipes | `knowledge/` |
+| What's been learned: topics, swipes, outliers, reports | `knowledge/` |
 | Full table of homes and formats | `docs/REFERENCE.md` |
 | The sync command and the skill installer | `tools/` |
 

@@ -26,7 +26,7 @@ When the owner names a team, a workflow or a skill, skip the front door and run 
 
 Every piece of information has exactly one home; add to it, never copy it somewhere else.
 - `business.md`: what the business is, the money, the week, the tools. `brand/`: who you serve (`icp.md`), what you believe (`contrarian-take.md`), where you show up (`channels.md`), what stops the buyer (`friction-points.md`), what you sell and its price (`offer.md`), how you sound (`voice.md`: a map of where the owner's real voice lives; read what it points at), banned words (`guidelines.md`), colors and fonts.
-- `knowledge/`: what's been learned (topics, hooks, goals, competitors, swipes, `reports/`, `landing-pages.json`).
+- `knowledge/`: what's been learned (topics, goals, competitors, swipes, outliers, `reports/`, `landing-pages.json`). Hooks live in `marketing/social/hooks/<platform>.md`.
 - `routines/<name>/README.md`: one description page per job that runs on its own (what, where, when, what it needs). The code lives in the headquarters repo or as a scheduled task on the owner's computer, never here.
 - `clients/<client>/`: for owners who do client work. `setup.md` (the facts), `log.md` (the one allowed log in the vault), and anything made for that client.
 - **Never in this vault:** logs (anything that gets a new row or file every time something happens: point at where it lives instead), code that runs (headquarters repo), the website's files (website repo), keys.

@@ -25,8 +25,5 @@ One line each: the topic · give / prove / invite · who it's for.
 
 _Not filled in yet._
 
-## Used
-Not a list of posts. A used topic stays in Topics with `(used)` at the end of its line. If your lesson's skill asks for a line here, write the topic only (no date, no link), and cross it off in Topics too.
-
 ## Updates
 Every change to this file gets one dated line here, newest on top: what changed and why.

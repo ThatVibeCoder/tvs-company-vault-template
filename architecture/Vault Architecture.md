@@ -68,13 +68,13 @@ Never write an AI's own idea, or an idea from someone else's video or post, as i
 ## The one allowed log: a client's `log.md`
 If you do work for clients, each client gets a folder in `clients/`, and inside it **one** log: `clients/<client>/log.md`. It's there so nothing about a client gets missed when you come back to them weeks later. It is the only log in the whole vault. What goes in it, and what never does, is in `clients/README.md`.
 
-## Already here, still to be moved
-These were in the vault before this page was written. They don't fully pass the log test yet. Leave them as they are, add nothing new like them, and move them when the lesson that writes them is updated:
-- **`knowledge/outliers.md`:** a run can add a new block each time. How we do it today: keep only the latest top three, replace instead of adding.
-- **`knowledge/reports/`:** a new report file every week. The numbers themselves live in your tools; the weekly traffic report runs in your headquarters repo.
-- **`knowledge/topics.md`, its Used section:** a line per post that went out. How we do it today: mark a topic `(used)` where it sits instead of adding a line.
+## Already here, kept on purpose
+These don't fully pass the log test, and they stay for now:
+- **`knowledge/reports/`:** the one folder of dated files the course uses, because your lessons read the newest report by name. Keep a few of each kind, not a running record (`knowledge/reports/README.md`).
 - **Lead files in a Sales Team folder** (`departments/sales/.../leads/`, if your Sales Team lesson builds them): one file per lead that grows with every touch. Not settled: by the log test leads belong in your CRM or Notion. Until the lesson moves them, keep each lead file short and current (who, where they came from, where things stand), not a diary.
 - **The "Updates" lines at the bottom of pages:** one dated line per change to that page. Not settled: they help you see what changed, but git already keeps that history.
+
+Already converted: `knowledge/outliers.md` holds only the latest top three (replaced each run), `knowledge/topics.md` marks a used topic `(used)` in place, and `knowledge/hooks.md` was folded into `marketing/social/hooks/<platform>.md`.
 
 ## Where everything is
 | You're looking for | Go to |

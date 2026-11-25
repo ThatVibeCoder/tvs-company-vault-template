@@ -22,7 +22,7 @@ Every routine's `README.md` starts with this header:
 
 ```
 ---
-name: Weekly Traffic Report
+name: Traffic Report
 team: Dev Team
 status: planned
 runs_on: github-actions
@@ -41,4 +41,4 @@ Under the header, five short sections: **What it does**, **Where it runs** (the 
 After you add or change a routine page, run the sync command (`python3 tools/sync.py`, or `py tools/sync.py` on Windows). It checks the header.
 
 ## Example
-`weekly-traffic-report/README.md` describes the example job that ships in the headquarters template.
+`traffic-report/README.md` describes the example job that ships in the headquarters template.
