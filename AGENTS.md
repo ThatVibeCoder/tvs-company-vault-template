@@ -2,7 +2,7 @@
 
 The rules for every AI in this repo. Codex, Cursor and Grok Build load this file on their own; Claude Code loads it through `CLAUDE.md` and Gemini CLI through `GEMINI.md`, two pointers `tools/sync.py` writes. The rules are written only here.
 
-**This repo is the company vault** (knowledge, brand, departments, agent teams, skills), opened in Obsidian and read by every AI. The engine (the dashboard, automations that run on their own, the website files, keys) lives in a separate repo: `tvs-marketing-department`. Where a fact lives somewhere else on purpose (Notion, a CRM), the section here points to the exact page instead of copying it. Front door for people: `START-HERE.md`.
+**This repo is the company vault** (knowledge, brand, departments, agent teams, skills, and descriptions of what runs on its own), opened in Obsidian and read by every AI. The things that run (automations, GitHub Actions, the posting queue, the dashboard picture) live in the owner's second repo, the marketing headquarters (template: github.com/ThatVibeCoder/tvs-marketing-headquarters). The website has its own repo. The vault and the headquarters never connect, with one exception: the headquarters dashboard reads this vault's team folders to draw its picture. Nothing in this vault reads, writes or runs the headquarters. Where a fact lives somewhere else on purpose (Notion, a CRM), the section here points to the exact page instead of copying it. Front door for people: `START-HERE.md`. How the vault is built (the three kinds of page, the log test, which page owns a rule): `architecture/Vault Architecture.md`; read it before adding a page, a folder or a new kind of file.
 
 This is the owner's company, built as files. It starts as a skeleton: `departments/` holds one team, the Dev Team (`departments/it-systems/dev-team/`), the plumbing every other team needs (saving to GitHub, keys, connecting tools, shipping pages). Every other team comes from a classroom lesson, whose skill doc builds it in `departments/` from the owner's own answers.
 
@@ -26,11 +26,14 @@ When the owner names a team, a workflow or a skill, skip the front door and run 
 
 Every piece of information has exactly one home; add to it, never copy it somewhere else.
 - `business.md`: what the business is, the money, the week, the tools. `brand/`: who you serve (`icp.md`), what you believe (`contrarian-take.md`), where you show up (`channels.md`), what stops the buyer (`friction-points.md`), what you sell and its price (`offer.md`), how you sound (`voice.md`: a map of where the owner's real voice lives; read what it points at), banned words (`guidelines.md`), colors and fonts.
-- `knowledge/`: what's been learned (topics, hooks, goals, competitors, swipes, `reports/`, `landing-pages.json`). The website files (`site/`), scheduled work (`routines/`), raw recordings (`recordings/`) and the dashboard live in the engine repo (`tvs-marketing-department`), not here.
+- `knowledge/`: what's been learned (topics, hooks, goals, competitors, swipes, `reports/`, `landing-pages.json`).
+- `routines/<name>/README.md`: one description page per job that runs on its own (what, where, when, what it needs). The code lives in the headquarters repo or as a scheduled task on the owner's computer, never here.
+- `clients/<client>/`: for owners who do client work. `setup.md` (the facts), `log.md` (the one allowed log in the vault), and anything made for that client.
+- **Never in this vault:** logs (anything that gets a new row or file every time something happens: point at where it lives instead), code that runs (headquarters repo), the website's files (website repo), keys.
 - `departments/<department>/<team>/`: a team (`team.md`), its members (`<member>/<member>.md`) and their skills (`<member>/skills/<skill>/SKILL.md`). Finished work goes in `output/` next to the member that made it.
 - A home inside a team's folder only exists once that team's lesson builds it; never make a team folder by hand.
 
-Read `docs/REFERENCE.md` only when you need more: "Where everything goes" for the full table of homes (or a home that isn't listed above), "The shape" for the `team.md`, member and skill formats, "Commands" for how shortcuts are built, "The Command Center" for what each page shows, "Adding something new" when a lesson builds a team, "Memory" for where a correction goes. If something truly has no home, ask the owner before making one and add it to that table in the same change.
+Read `docs/REFERENCE.md` only when you need more: "Where everything goes" for the full table of homes (or a home that isn't listed above), "The shape" for the `team.md`, member and skill formats, "Commands" for how shortcuts are built, "Adding something new" when a lesson builds a team, "Memory" for where a correction goes. If something truly has no home, ask the owner before making one and add it to that table in the same change.
 
 ## Running skills, teams and workflows, on each AI
 
@@ -49,7 +52,7 @@ Every team, workflow and skill gets a shortcut that sync writes (`.claude/skills
 
 ## Keep it in sync: run the sync command
 
-Run it when a team, team member, skill, workflow or routine is added, renamed or removed, and before every save. It checks the structure and rebuilds every shortcut and pointer (the dashboard data is rebuilt in the engine repo). **Run it once.** If it prints a line starting with FIX, show the owner that exact line and stop. If it prints BLOCKED, your AI's safety settings stopped the write (Codex keeps `.agents/` read-only): ask the owner to approve the command once, or to run it in their own terminal, then run it once more. Never fix-and-rerun on your own, and never run it again on an error nothing has changed. `--check` changes nothing and fails if anything is out of date; save-work runs it.
+Run it when a team, team member, skill, workflow or routine is added, renamed or removed, and before every save. It checks the structure (including each routine page's header) and rebuilds every shortcut and pointer. **Run it once.** If it prints a line starting with FIX, show the owner that exact line and stop. If it prints BLOCKED, your AI's safety settings stopped the write (Codex keeps `.agents/` read-only): ask the owner to approve the command once, or to run it in their own terminal, then run it once more. Never fix-and-rerun on your own, and never run it again on an error nothing has changed. `--check` changes nothing and fails if anything is out of date; save-work runs it.
 
 **Which command, by computer** (check which one the owner is on first):
 - **Mac or Linux:** `python3 tools/sync.py`
@@ -60,7 +63,7 @@ Run it when a team, team member, skill, workflow or routine is added, renamed or
 - **Mac:** `xcode-select --install`, then accept.
 - **Linux:** `sudo apt install python3` (or their system's package manager).
 
-Never run a system install yourself, and never hand-build the shortcuts, commands, pointer files or Command Center data: only sync writes those.
+Never run a system install yourself, and never hand-build the shortcuts, commands or pointer files: only sync writes those.
 
 ## Building from a lesson
 
@@ -69,10 +72,6 @@ A lesson's skill doc says which team, team member or skill it builds. Follow it 
 ## Memory
 
 When the owner says "always" or "remember", or makes the same correction twice, write it down right then: business-wide facts in their file from the table (with a dated `## Updates` line), one member's habits in its `## Memory`, a whole team's in `team.md`. A correction to how the owner sounds goes into `brand/voice.md` only after they confirm. Skills don't hold memory.
-
-## The Command Center
-
-The dashboard (the picture of the company) lives in the engine repo, `tvs-marketing-department`, not in this vault.
 
 ## Standing security rules (every session, every build)
 

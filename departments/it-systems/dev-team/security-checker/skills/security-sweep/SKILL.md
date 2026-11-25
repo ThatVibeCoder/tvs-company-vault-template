@@ -8,7 +8,7 @@ description: "Look for leaked keys and anything exposed in the files that change
 Cheap to run, expensive to skip.
 
 ## Scope first
-A routine sweep covers only what this job touched: the files changed since the last save (`git status` and `git diff` list them), or the one page or connection the owner named. A whole-repo sweep runs only when the owner asks for a security audit. Never open `command-center/data/` or `command-center/assets/` for it.
+A routine sweep covers only what this job touched: the files changed since the last save (`git status` and `git diff` list them), or the one page or connection the owner named. A whole-repo sweep runs only when the owner asks for a security audit.
 
 ## Steps
 1. Sweep the files in scope for anything key-shaped: long random strings, anything named like a secret. If `.env` is in scope, check that saves still skip it (`git check-ignore .env`).

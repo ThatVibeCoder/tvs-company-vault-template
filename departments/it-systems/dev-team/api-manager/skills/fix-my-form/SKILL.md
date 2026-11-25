@@ -11,11 +11,11 @@ It runs on free tools. A form needs a free form service (Formspree's free plan, 
 
 ## Read first
 1. `business.md`: the tools (where the live site is built and hosted, and which email the owner reads every day) and What You Sell, so the test answer looks like a real one.
-2. `knowledge/landing-pages.json`: which pages exist, which one has the form (an entry with `kind: "form"`, or the page itself), its `route`, its `file` under `site/` and its `domain`.
-3. The page's own file in `site/` if it lives there: find the `<form>` tag, its `action` and `method`, and any script that sends it.
+2. `knowledge/landing-pages.json`: which pages exist, which one has the form (an entry with `kind: "form"`, or the page itself), its `route`, its `file` in your website repo and its `domain`.
+3. The page's own file in your website repo (`<company>-website`) if it lives there: find the `<form>` tag, its `action` and `method`, and any script that sends it.
 4. This team member's file, `api-manager.md`: if a line there already names this form's door (the service and the inbox it sends to), start from it.
 
-**If the site isn't in `site/`** (business.md names Wix, Squarespace, Webflow, Shopify or another builder): the form lives in that builder, not in this repo. Run the same steps there, giving the owner plain clicks for that builder's form settings. Never rebuild their page in `site/` to fix a form.
+**If the site isn't in a website repo** (business.md names Wix, Squarespace, Webflow, Shopify or another builder): the form lives in that builder, not in this repo. Run the same steps there, giving the owner plain clicks for that builder's form settings. Never rebuild their page in a repo to fix a form.
 
 **If no page has a form yet:** say so in one line. That's not a broken form, it's one that was never built: the Page Builder's build-a-page adds it (it arrives with the Website Team, which its lesson builds). Stop there.
 
@@ -25,7 +25,7 @@ It runs on free tools. A form needs a free form service (Formspree's free plan, 
 Wait for the answer. The email they name is the one the proof has to land in.
 
 ## Steps
-1. **Find the door.** Name the page, then where its answers go, in one line each: "The form on `/` sends to Formspree, form `xabcdwq`, which emails `hello@...`". In `site/`, that's the form's `action` (or the address its script posts to). In a site builder, it's the form's notification settings. If the action is empty, `#`, or missing, the form was never wired: go to step 4.
+1. **Find the door.** Name the page, then where its answers go, in one line each: "The form on `/` sends to Formspree, form `xabcdwq`, which emails `hello@...`". In a website repo, that's the form's `action` (or the address its script posts to). In a site builder, it's the form's notification settings. If the action is empty, `#`, or missing, the form was never wired: go to step 4.
 2. **Send one test answer, like a stranger.** On the live page, not a copy, with a real-shaped answer: a real name, the owner's own email, and "Test from fix-my-form, <date>" as the message. Write down exactly what happened: an error, a thank-you page, nothing at all, or a page that wouldn't load.
 3. **Match what happened to the cause.** Check the inbox the owner named, its spam folder and its promotions tab, then check them in this order and stop at the first one that's true:
    - **The button does nothing.** The button isn't inside the `<form>`, isn't `type="submit"`, or the page's script stops it with an error (open the browser's console). Fix the button or the script line.
@@ -38,12 +38,12 @@ Wait for the answer. The email they name is the one the proof has to land in.
    - **It arrived.** The form works. The problem is people, not the door: go to The ending.
 4. **Wire it, if it was never wired.** Pick the free form service the way pick-the-door picks any door: a form service beats building a server. Formspree's free plan works on a plain HTML page and emails the answers to the owner, with nothing secret in the page. The owner makes the free account on Formspree's own site with the email they read every day and gets the form's ID; give them plain directions for that one site. Another free service is fine only if the page needs nothing but an address from it. Then set the form's `action` to it and `method="post"`. Keep the fields the page already has; never add one (build-a-page's rule: every extra field costs real people). Add the service's hidden spam trap field, so the inbox doesn't fill with bots.
 5. **Keep secrets off the page.** A Formspree form ID is made to sit in the page: it's an address, not a password. Anything a service calls a key, a secret or a token is different, and AGENTS.md's security rules say a key never goes in a page: it goes through the Keys Agent's add-a-key into `.env`, and a service that needs one in the page is the wrong service for a plain page.
-6. **Fix only that, then put it live.** If the fix changed a file in `site/`, it isn't live until it ships: run the Code Reviewer's review-changes, then hand it to the Vercel Agent's ship-a-page. A fix inside a site builder is live once the owner hits its publish button.
+6. **Fix only that, then put it live.** If the fix changed a file in your website repo, it isn't live until it ships: run the Code Reviewer's review-changes, then hand it to the Vercel Agent's ship-a-page. A fix inside a site builder is live once the owner hits its publish button.
 7. **Prove it.** Send a second test answer from the live page, same as step 2. It counts only when it's seen in the owner's inbox. "It should work now" is not a result.
 8. **Write down the door.** One line in this team member's file, `api-manager.md`, under its job: the page, the form service, and the inbox it sends to, dated. That's how connection-check knows the door exists and tries it next month.
 
 ## Worked example (a made-up dog groomer)
-The owner says "my contact form isn't sending". `knowledge/landing-pages.json` has one landing page, `site/index.html`. Its form:
+The owner says "my contact form isn't sending". `knowledge/landing-pages.json` has one landing page, `index.html` in the website repo. Its form:
 ```
 <form action="#">
   <input name="name" placeholder="Your name">

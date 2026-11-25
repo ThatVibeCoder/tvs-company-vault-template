@@ -4,6 +4,8 @@
 
 Your openers: the first lines that worked for YOUR buyer, and the ones waiting to be tested. Shapes come from the opener bank in write-hooks; this file keeps your proof.
 
+This page is knowledge, not a log: it holds what works now, kept short. When a list gets long, the weakest one leaves instead of the list growing forever. The posts themselves stay on the platform. Hooks for one platform live in `marketing/social/hooks/<platform>.md`; this page is the proof across all of them.
+
 A section that still says _Not filled in yet._ counts as missing.
 
 ## At a Glance

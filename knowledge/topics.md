@@ -2,7 +2,7 @@
 
 **Filled by:** the Pick Your Platforms lesson (the Content Team's Social Manager). Read by every content skill before it drafts.
 
-What your content is about: the topics your buyer cares about, pulled from your own brand files. A used topic moves to Used, so nothing gets posted twice by accident.
+What your content is about: the topics your buyer cares about, pulled from your own brand files. When a topic goes out, mark it `(used)` where it sits in Topics, so nothing gets posted twice by accident. This page is not a log of what went out: your sent posts live on the platform.
 
 A section that still says _Not filled in yet._ counts as missing.
 
@@ -26,9 +26,7 @@ One line each: the topic · give / prove / invite · who it's for.
 _Not filled in yet._
 
 ## Used
-One line each, newest on top: the topic, the date, and where it went out.
-
-_Not filled in yet._
+Not a list of posts. A used topic stays in Topics with `(used)` at the end of its line. If your lesson's skill asks for a line here, write the topic only (no date, no link), and cross it off in Topics too.
 
 ## Updates
 Every change to this file gets one dated line here, newest on top: what changed and why.
