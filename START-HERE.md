@@ -26,7 +26,7 @@ Later in the course your website gets a third repo of its own (`<company>-websit
 | Sales psychology | `sales/psychology/` |
 | How-to pages and SOPs | `operations/playbook/` |
 | Policies and procedures | `operations/policies/` |
-| Voice, colors, fonts, ICP, personas | `brand/` |
+| Voice, colors, fonts, who you serve (ICP) | `brand/` (more buyers: `brand/icps/`) |
 | Social media: every platform, frameworks, hooks | `marketing/social/` |
 | Websites: what each one is for and where its code lives | `marketing/websites/` |
 | Compliance, contracts | `operations/compliance/` |

@@ -2,7 +2,7 @@
 
 **Filled by:** the Pick Your Platforms lesson (the Content Team's Social Manager). Read by every content skill before it drafts.
 
-What your content is about: the topics your buyer cares about, pulled from your own brand files. When a topic goes out, mark it `(used)` where it sits in Topics, so nothing gets posted twice by accident. This page is not a log of what went out: your sent posts live on the platform.
+What your content is about: the topics your buyer cares about, pulled from your own brand files. When a topic goes out, mark it `(used)` where it sits in Topics, so nothing gets posted twice by accident. This page is not a log of what went out: your sent posts live on the platform. If a skill says to move a topic to a Used list, mark it `(used)` in place instead.
 
 A section that still says _Not filled in yet._ counts as missing.
 
