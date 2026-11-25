@@ -6,7 +6,7 @@
 #
 # Why copies and not raw symlinks: the generated shortcuts in .claude/skills/ point at
 # `departments/...` relative to this repo. A copy pinned to this repo's absolute path
-# works from any folder, on any machine (Christian's clone gets Christian's path).
+# works from any folder, on any machine (a teammate's clone gets their own path).
 # Each installed folder carries a marker file, so this script never touches a skill
 # it didn't install, and never overwrites one that already exists.
 set -euo pipefail

@@ -1,17 +1,17 @@
 ---
 name: ship-a-page
-description: "Put a page from this repo onto the live internet and hand back the URL. Use when the owner says ship it or put it live, or the landing page from Build Your Landing Page is ready. Not for testing it (pre-ship-check) or saving it (save-work)."
+description: "Put a page from your website repo onto the live internet and hand back the URL. Use when the owner says ship it or put it live, or the landing page from Build Your Landing Page is ready. Not for testing it (pre-ship-check) or saving it (save-work)."
 ---
 
 # ship-a-page
 
-From files in the repo to a URL you can send someone.
+From files in your website repo to a URL you can send someone. Your website has its own repo (`<company>-website`), never this vault and never your headquarters repo: every save to a website repo can put the site live. Run these steps in that repo's folder.
 
 ## Steps
 1. Confirm the page work is SAVED first (save-work). Never ship unsaved work.
-2. Connect the repo to Vercel if this is the first time. It watches GitHub and rebuilds on every save after that. Shipping runs through the Vercel CLI, so it is one command rather than a website safari. If the CLI is not logged in yet, run `vercel login` first and follow the prompt. That needs a Vercel account, free to make, linked to the same GitHub account holding this repo.
+2. Connect the website repo to Vercel if this is the first time. It watches GitHub and rebuilds on every save after that. Shipping runs through the Vercel CLI, so it is one command rather than a website safari. If the CLI is not logged in yet, run `vercel login` first and follow the prompt. That needs a Vercel account, free to make, linked to the same GitHub account holding this repo.
 3. Ship it, wait for the build, and open the live URL yourself before handing it over.
-4. Mark it live in `knowledge/landing-pages.json`: on that page's entry (and on every page under it that shipped with it), set `status: "live"`, the live `url`, its `domain`, and today's date as `shipped`. If the page isn't on the list yet, add it the way build-a-page does (the shape is in `knowledge/README.md`). Then run `python3 tools/sync.py`.
+4. Back in this vault, mark it live in `knowledge/landing-pages.json`: on that page's entry (and on every page under it that shipped with it), set `status: "live"`, the live `url`, its `domain`, and today's date as `shipped`. If the page isn't on the list yet, add it the way build-a-page does (the shape is in `knowledge/README.md`). Then run `python3 tools/sync.py`.
 5. Give the owner the URL and one line: what's live, and that every future save updates it automatically.
 
 ## Rules

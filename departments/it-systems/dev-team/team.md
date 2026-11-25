@@ -41,7 +41,7 @@ When: The one-time setup that connects your repo, hosting, database and tools. E
 ## Workflow: ship my landing page
 Say: "ship my landing page"
 Also say: deploy my site, put my page live, push this to production
-When: A page in `site/` is ready to go live (the test page, or one the Website Team built once its lesson adds it). If "set up my code base" never ran, run that first.
+When: A page in your website repo is ready to go live (the test page, or one the Website Team built once its lesson adds it). If "set up my code base" never ran, run that first.
 ### Plan
 1. **Planner** · one-plan · turns the page that's ready into a one-page ship plan. You say go. [you approve]
 ### Save

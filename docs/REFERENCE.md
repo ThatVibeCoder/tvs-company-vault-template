@@ -4,7 +4,7 @@ The long-form reference behind `AGENTS.md`. Nothing here is read up front: `AGEN
 
 ## Where everything goes
 
-Every piece of information has exactly one home. Find it in this table and add to it. Never make a second copy somewhere else, because copies drift. "Kept by" names the team member who keeps it once its team's lesson builds that team; until then, the owner and their AI keep it, in the same home. A home inside a team's folder (like the posts folder) only exists once that team's lesson builds it: never make a team folder by hand to hold a file.
+Every piece of information has exactly one home. Find it in this table and add to it. Before adding a new kind of file, run the log test in `architecture/Vault Architecture.md`. Never make a second copy somewhere else, because copies drift. "Kept by" names the team member who keeps it once its team's lesson builds that team; until then, the owner and their AI keep it, in the same home. A home inside a team's folder (like a team member's `output/`) only exists once that team's lesson builds it: never make a team folder by hand to hold a file.
 
 | What it is | Its one home | Kept by |
 |---|---|---|
@@ -16,29 +16,30 @@ Every piece of information has exactly one home. Find it in this table and add t
 | How you sound: a map of where your real voice lives, plus your best short pieces word for word | `brand/voice.md` | Company Strategist |
 | Your content mix and where you post | `brand/channels.md` | Company Strategist |
 | Your content topics, and the 4 questions every post answers | `knowledge/topics.md` | Social Manager |
-| Every post: one file each, with its platform, status (draft, approved, rejected, posted), day and time | `departments/marketing/content-team/social-manager/posts/<date>-<platform>-<words>.md` (the Content Team lesson adds this folder and its README, which shows the header) | Copywriter writes it, Social Manager dates and posts it; the owner approves and edits it in the Command Center |
-| Your website's numbers from Google Analytics and Search Console (stays on your computer, skipped by every save) | `command-center/data/web.json`, written by `tools/pull_web.py` | Traffic Agent |
-| Your payments: revenue, MRR, invoices, from your payment provider (stays on your computer, skipped by every save) | `command-center/data/payments.json` (its shape is in `command-center/data/README.md`); the provider and its read-only key are set in Settings → Payments | Payments Agent (Dev Team) |
-| Command Center settings: brands, handles, how posts go out, posting cadence, payment provider (never a key) | `command-center/settings.json` | the owner, in the Command Center's Settings |
-| Your openers: the ones that won, and the ones to try next | `knowledge/hooks.md` | Copywriter (read-the-stats marks the winners) |
+| Every post waiting to go out: one file each, with its platform, status, day and time | your headquarters repo's `posts/` folder (the queue a posting job reads; a post leaves once it's sent). Never in this vault; a sent post lives on the platform | Copywriter writes it, Social Manager dates it; the owner approves it |
+| Your website's numbers from Google Analytics and Search Console | never saved here: read them in Google Analytics and Search Console when you need them; the weekly traffic report runs in your headquarters repo (`routines/traffic-report/README.md`) | Traffic Agent |
+| Your payments: revenue, invoices | never saved here: they live with your payment provider, read in the moment with a read-only key in `.env` | Payments Agent (Dev Team) |
+| Your openers: the ones that won, and the ones to try next | `marketing/social/hooks/<platform>.md` (the one home for hooks) | Copywriter (read-the-stats marks the winners) |
 | Banned words, formatting, never-do calls | `brand/guidelines.md` | whoever was corrected |
 | Colors, fonts, logos | `brand/colors.md`, `brand/typography.md`, `brand/assets/` | Designer |
 | Your business audit: tools, hours, what to cut and hand off | `knowledge/business-audit.md` | Company Strategist |
 | Your goals: the wins, numbers and things you want running next, crossed off as they land | `knowledge/goals.md` | Company Strategist |
 | Competitors (one file each: website, where they post and how often, what they lead with), swipes, outliers | `knowledge/competitors/<name>.md`, `knowledge/swipes/`, `knowledge/outliers.md` | Researcher (scan-my-competitors for the first look, competitor-check for the deeper read, collect-swipes for swipes, find-outliers for outliers) |
-| Reports (site audits, checkups, traffic) | `knowledge/reports/` | the workflow that made it |
+| Reports (site audits, checkups, traffic, content stats): a few of each, not a running record | `knowledge/reports/` (the one folder of dated files; see its README) | the workflow that made it |
 | Your ads: the ready check and the weekly read | `knowledge/reports/ads-ready-<YYYY-MM-DD>.md`, `knowledge/reports/ads-<YYYY-MM-DD>.md` | Growth Lead |
 | Your ad tests: the plan, the campaign (built paused, you turn it on), the tracking setup, each ad batch | `output/` next to the Growth Lead (`test-plan-<date>.md`), the Ads Manager (`campaign-<date>.md`, `tracking.md`) and the Ad Writer (`batch-<date>.md`) | the Ads Team |
 | The strategist's brief for the next team member | `departments/operations/strategy-team/company-strategist/briefs/<YYYY-MM-DD>-<team-member>.md` | Company Strategist |
 | Moat scores | `departments/operations/strategy-team/moat-analyst/scores.md` | Moat Analyst |
-| Your website's source: the files that go live (the test page first, then your landing page) | `site/` (what `vercel.json` puts online) | Page Builder; the Vercel Agent ships it |
-| Every landing page and the pages under it (forms, thank-you pages, upsells, product pages, on any domain), grouped by the offer each one sells | `knowledge/landing-pages.json` (its shape is in `knowledge/README.md`; kept out of `site/` so it never goes live) | Page Builder (build-a-page registers each page); the Vercel Agent marks it live |
-| Raw recordings: your phone takes and voice memos before they're edited (the video files stay on your computer; their notes and transcripts get saved) | `recordings/` | Social Manager |
+| Your website's source: the files that go live (the test page first, then your landing page) | your website repo (`<company>-website`, its own repo, made later in the course). Never this vault | Page Builder; the Vercel Agent ships it |
+| Every landing page and the pages under it (forms, thank-you pages, upsells, product pages, on any domain), grouped by the offer each one sells | `knowledge/landing-pages.json` (a pointer list; its shape is in `knowledge/README.md`) | Page Builder (build-a-page registers each page); the Vercel Agent marks it live |
+| Raw recordings: your phone takes and voice memos before they're edited | never in this vault: they stay where you keep them (your phone, a drive folder); `brand/voice.md` points at where they live | Social Manager |
 | Finished work (drafts, pages, documents) | `output/` next to the team member that made it | that team member |
-| Your leads: one file per person, with where they came from, what they said, the touch log and call notes | `departments/sales/sales-team/crm-agent/leads/<lead-name>.md` | CRM Agent |
+| Your leads: one file per person, with where they came from and where things stand | `departments/sales/sales-team/crm-agent/leads/<lead-name>.md` (not settled: a file that grows with every touch is a log, so keep each one short and current; see `architecture/Vault Architecture.md`) | CRM Agent |
 | Booking messages | `output/` next to the Calendar Agent (`<date>-book-<lead>.md`) | Calendar Agent |
 | Reply drafts and follow-up nudges | `output/` next to the Reply Agent (`<date>-<lead>.md`) and the Nurture Agent (`<date>-<lead>.md`, `<date>-quiet-list.md`) | Reply Agent, Nurture Agent |
-| Scheduled work | `routines/<name>/README.md` | the team that owns it |
+| Work that runs on its own: one description page each (the code lives in your headquarters repo or as a scheduled task on your computer) | `routines/<name>/README.md` (the header is in `routines/README.md`) | the team that owns it |
+| A client's setup facts, their one allowed log, and anything made for that client | `clients/<client>/setup.md`, `clients/<client>/log.md` (rules in `clients/README.md`) | whoever works with that client |
+| How the vault itself is built: the kinds of page, the log test, which page owns a rule | `architecture/Vault Architecture.md` | the owner |
 
 If something truly has no home in this table, ask the owner before making one, then add the new home to this table in the same change.
 
@@ -78,17 +79,7 @@ After sync, the owner can call:
 - a workflow, by saying its words (for example "ship my landing page") or by its shortcut (`ship-my-landing-page`), to run it start to finish;
 - one skill on its own (for example `save-work`).
 
-In Claude Code, Gemini CLI, Cursor and Grok Build, type them with a slash: `/dev-team` (Grok Build loads them only once you've said yes to trusting this folder). In Codex, type them with a dollar sign, `$dev-team`, or pick them from the `/skills` menu. In any other agent, say it: "run my dev team". Saying what you want in plain words works everywhere. The Command Center's Settings → AI Agents page shows each one.
-
-## The Command Center
-
-`command-center/index.html` is the picture of this whole company. Its sidebar starts with **Dashboard** (the business at a glance: revenue, MRR, website visitors and open invoices, the Total Revenue chart, revenue by customer and recent payments, all from `command-center/data/payments.json`; until the Payments Agent fills it, each says to connect payments in Settings → Payments) and **Agent** (a chat with your AI in the Claude desktop style: design only, Coming soon; until it's on, use your AI in this folder), then the Workspace sections, each opening into its pages: **Content**, **Web & Analytics** and **Automations**. **Automations**: every team, its workflow drawn in phases, its team members and skills, and every routine. **Content**: an Overview of what went out and what's waiting, a Calendar, Research (from `knowledge/`), and one page per platform (TikTok, Instagram, X, Threads, YouTube, Skool, LinkedIn) with its review queue and an editor that shows exactly how the post looks on that platform. **Web & Analytics**: every landing page you have, grouped by offer, with a toggle that opens the pages under each one (from `knowledge/landing-pages.json`), then your website's visitors, traffic sources, pages, searches and a visitor map, from Google Analytics and Search Console (connect them once in Settings → Web connections, which also holds Microsoft Clarity, Bing Webmaster Tools and one other tool, set up but not pulled yet; then `python3 tools/pull_web.py` or its Pull now button brings the numbers in, read-only). **Settings** sits at the bottom left: account, workspace, brands, connected accounts, payments (pick the provider, save a read-only key; nothing here calls the provider, the Payments Agent does), web connections, posting cadence, AI agents (how to run your teams on each one) and developer info.
-
-**Never open `command-center/data/` or `command-center/assets/` for an install or a skill run.** They're big generated files sync writes. For dashboard work, search them for the one thing you need instead of reading them whole.
-
-Open it straight from the folder, no server needed: everything shows, read-only. It's rebuilt from the folders by `tools/sync.py`, so never edit `command-center/data/` by hand. If the owner asks to "see my team", "see my company" or "update the Command Center", run sync and open that file. (`org-chart.html` just forwards there.)
-
-To make its buttons work (Save changes, Approve, Reject, Settings), run `python3 tools/serve.py` (Windows: `py tools/serve.py`) and open the link it prints. It runs on the owner's computer only, writes every change to the files above, keeps API keys in `.env` only, and runs sync after each change. It never posts anything: posting stays with the Content Team's post-content skill, once its lesson builds that team.
+In Claude Code, Gemini CLI, Cursor and Grok Build, type them with a slash: `/dev-team` (Grok Build loads them only once you've said yes to trusting this folder). In Codex, type them with a dollar sign, `$dev-team`, or pick them from the `/skills` menu. In any other agent, say it: "run my dev team". Saying what you want in plain words works everywhere.
 
 ## Adding something new
 
